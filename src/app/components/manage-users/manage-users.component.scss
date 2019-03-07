@@ -1,0 +1,50 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  padding: 0 2.5em 2.5em;
+  overflow: auto;
+}
+
+.pageTitleAndRoute {
+  flex: 0 0 5em;
+  h1 {
+    margin: 0.4em 0;
+  }
+}
+
+.content {
+  flex: 1 0 calc(100% - 5em);
+  padding: 2em;
+  border-radius: 0.7em;
+
+  .userGridList {
+    display: flex;
+    flex-flow: row wrap;
+    .userGridTile {
+      flex: 0 0 auto;
+      .userCard {
+        height: calc(100% - 1.5em);
+        width: calc(100% - 1.5em);
+        padding: 1em;
+        .mat-card-header{
+          /deep/ .mat-card-header-text{
+            margin: 0 !important;
+          }
+          .userAction {
+            margin-left: auto;
+            cursor: pointer;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+button {
+  background-color: #209e91;
+  color: #fff;
+}

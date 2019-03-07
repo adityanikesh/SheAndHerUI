@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenavLeft mode="over" disableClose="false" position="start">
+    <ul class="sidenav-list">
+      <li *ngFor="let menu of menus">
+        <a class="sidenav-list-menu-link" [ngClass]="getMenuAndSubMenuClasses(menu.name)" (click)="menuAction(menu)" (mouseenter)="mouseEnterAction(menu.name)" (mouseleave)="mouseLeaveAction()">
+          <mat-icon class="icon">{{menu.icon}}</mat-icon>
+          <span class="name"> {{menu.name}} </span>
+          <mat-icon class="arrow-icon" *ngIf="menu.withSubMenu && menu.hide">keyboard_arrow_right</mat-icon>
+          <mat-icon class="arrow-icon" *ngIf="menu.withSubMenu && !menu.hide">keyboard_arrow_down</mat-icon>
+        </a>
+        <ul class="sidenav-sublist" [ngStyle]="showOrHideSubMenuStyles(menu)">
+          <li *ngFor="let submenu of menu.submenus">
+            <a class="sidenav-sublist-menu-link" [ngClass]="getMenuAndSubMenuClasses(submenu.name)" (click)="subMenuAction(submenu)" (mouseenter)="mouseEnterAction(submenu.name)" (mouseleave)="mouseLeaveAction()">
+              <mat-icon class="icon">{{submenu.icon}}</mat-icon>
+              <span class="name"> {{submenu.name}} </span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav #sidenavRight mode="over" disableClose="false" position="end">
+    <ul class="sidenav-list">
+      <li *ngFor="let menu of userAvatarMenus">
+        <a class="sidenav-list-menu-link" [ngClass]="getMenuAndSubMenuClasses(menu.name)" (click)="menuAction(menu)" (mouseenter)="mouseEnterAction(menu.name)" (mouseleave)="mouseLeaveAction()">
+          <mat-icon class="icon">{{menu.icon}}</mat-icon>
+          <span>{{menu.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

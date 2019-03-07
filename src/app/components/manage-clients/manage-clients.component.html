@@ -1,0 +1,23 @@
+<div class="pageTitleAndRoute">
+  <h1>Manage Clients</h1>
+</div>
+<mat-card class="content">
+  <mat-card-header>
+    <button mat-raised-button (click)="addClient()">Add Client</button>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list class="clientGridList" cols=3 rowHeight="10em">
+      <mat-grid-tile class="clientGridTile" *ngFor="let client of clients">
+        <mat-card class="clientCard">
+          <mat-card-header>
+            <span></span>
+            <mat-icon class="clientAction" (click)="clientAction">more_vert</mat-icon>
+          </mat-card-header>
+          <mat-card-content>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

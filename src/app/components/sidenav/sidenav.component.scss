@@ -1,0 +1,96 @@
+$sidenav-bg-color: #1C2B36;
+$sidenav-content-bg-color: #F0F3F4;
+$sidenav-focus-bg-color: #209e91;
+$sidenav-text-color: #fff;
+$sidenav-hover-text-color: #209e91;
+
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  width: 100%;
+}
+
+mat-sidenav-container {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  height: auto;
+  background-color: $sidenav-content-bg-color;
+}
+
+mat-sidenav {
+  display: flex;
+  flex-flow: column wrap;
+  width: 20em;
+  background-color: $sidenav-bg-color;
+}
+
+@mixin menu-link() {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3em;
+  padding: 0 2rem;
+  text-shadow: none;
+  text-decoration: none;
+  color: $sidenav-text-color;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(100, 100, 100,0.3);
+  .icon {
+    float: left;
+    width: 4.4rem;
+    padding-right: 2rem;
+  }
+  .name {
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  .arrow-icon {
+    float: right;
+    margin-left: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.sidenav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(100, 100, 100,0.3);
+}
+
+.sidenav-list-menu-link {
+  @include menu-link();
+}
+
+.sidenav-sublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 0;
+  transition: all 0.2s linear;
+}
+
+.sidenav-sublist-menu-link {
+  @include menu-link();
+}
+
+.currentFocus {
+  background-color: $sidenav-focus-bg-color;
+  color: $sidenav-text-color;
+}
+
+.currentHover {
+  color: $sidenav-hover-text-color;
+  border-bottom: 1px solid rgba(2, 158, 145, 0.5);
+  border-top: 1px solid rgba(2, 158, 145, 0.5);
+}

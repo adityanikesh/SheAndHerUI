@@ -1,0 +1,23 @@
+<div class="pageTitleAndRoute">
+  <h1>Manage Users</h1>
+</div>
+<mat-card class="content">
+  <mat-card-header>
+    <button mat-raised-button (click)="addUser()">Add Users</button>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list class="userGridList" cols=3 rowHeight="10em">
+      <mat-grid-tile class="userGridTile" *ngFor="let user of users">
+        <mat-card class="userCard">
+          <mat-card-header>
+            <span>{{user.firstName}}</span>
+            <mat-icon class="userAction" (click)="userAction">more_vert</mat-icon>
+          </mat-card-header>
+          <mat-card-content>
+            {{user.email}}
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

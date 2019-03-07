@@ -1,0 +1,22 @@
+<div class="loginPage">
+  <mat-card>
+    <mat-card-title>
+      <h5>Avocado Systems</h5>
+    </mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="username" formControlName="username" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="password" formControlName="password" autocomplete="off">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button type="submit">Login</button>
+        <button mat-raised-button type="button" (click)="createAccount()">Create Account</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+
+</div>

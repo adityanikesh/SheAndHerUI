@@ -1,0 +1,108 @@
+<div class="PageTitleAndRoute">
+  <h1>My Account</h1>
+</div>
+<mat-card>
+  <form [formGroup]="myAccountForm" (ngSubmit)="onSubmit(myAccountForm)">
+    <mat-card-content>
+      <div class="user-details">
+        <h3>User Details</h3>
+        <mat-divider></mat-divider>
+        <div class="column">
+          <div class="row">
+            <label class="label">First Name</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="firstName">
+              <mat-error *ngFor="let validation of validationMessages.firstName">
+                <mat-error class="error-message" *ngIf="myAccountForm.get('firstName').hasError(validation.type) && (myAccountForm.get('firstName').dirty || myAccountForm.get('firstName').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Last Name</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="lastName">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Email</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="email">
+              <mat-error *ngFor="let validation of validationMessages.email">
+                <mat-error class="error-message" *ngIf="myAccountForm.get('email').hasError(validation.type) && (myAccountForm.get('email').dirty || myAccountForm.get('email').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Country</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="country">
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Phone</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="phone">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="account-details">
+        <h3>Account Deatils</h3>
+        <mat-divider></mat-divider>
+        <div class="column">
+          <div class="row">
+            <label class="label">Username</label>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="" formControlName="username">
+              <mat-error *ngFor="let validation of validationMessages.username">
+                <mat-error class="error-message" *ngIf="myAccountForm.get('username').hasError(validation.type) && (myAccountForm.get('username').dirty || myAccountForm.get('username').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Password</label>
+            <mat-form-field appearance="outline">
+              <input matInput type="password" formControlName="password" required>
+              <mat-error *ngFor="let validation of validationMessages.password">
+                <mat-error class="error-message" *ngIf="myAccountForm.get('password').hasError(validation.type) && (myAccountForm.get('password').dirty || myAccountForm.get('password').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Confirm Password</label>
+            <mat-form-field appearance="outline">
+              <input matInput type="password" formControlName="confirmPassword">
+              <mat-error *ngFor="let validation of validationMessages.confirmPassword">
+                <mat-error class="error-message" *ngIf="(myAccountForm.get('confirmPassword').hasError(validation.type) || myAccountForm.errors?.mismatch) && (myAccountForm.get('confirmPassword').dirty || myAccountForm.get('confirmPassword').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <label class="label">Role</label>
+            <mat-form-field appearance="outline">
+              <mat-select placeholder="Select role" formControlName="role" required>
+                <mat-option *ngFor="let role of roles" [value]="role">
+                  {{role}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngFor="let validation of validationMessages.role">
+                <mat-error class="error-message" *ngIf="myAccountForm.get('role').hasError(validation.type) && (myAccountForm.get('role').dirty || myAccountForm.get('role').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <button mat-raised-button type="submit" [disabled]="!myAccountForm.valid">Update Profile</button>
+    </mat-card-footer>
+  </form>
+</mat-card>

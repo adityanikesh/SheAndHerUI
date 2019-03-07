@@ -1,0 +1,40 @@
+<div class="tableOptions">
+  <button mat-raised-button (click)="registerApplications()">Register</button>
+  <button mat-raised-button (click)="deleteApplications()">Delete</button>
+</div>
+
+<mat-table mat-table [dataSource]='dataSource' class="applicationTable">
+  <ng-container matColumnDef="select">
+    <mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="appName">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.appName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="custName">
+    <mat-header-cell *matHeaderCellDef> Customer </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.customer.custName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="deptName">
+    <mat-header-cell *matHeaderCellDef> Department </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.department.deptName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="compliance">
+    <mat-header-cell *matHeaderCellDef> Compliance </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.compliance}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumnsRegisteredApps"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumnsRegisteredApps;"></mat-row>
+</mat-table>

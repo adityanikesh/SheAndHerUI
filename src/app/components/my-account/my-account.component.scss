@@ -1,0 +1,137 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  padding: 0 2.5em 2.5em 2.5em;
+  overflow: auto;
+}
+
+.PageTitleAndRoute {
+  flex: 0 0 5em;
+  h1 {
+    margin: 0.4em 0;
+  }
+}
+
+mat-card {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1 0 calc(100% - 5em);
+  padding: 2em;
+  border-radius: 0.7em;
+  color: grey;
+  form {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1;
+    height: 100%;
+  }
+}
+
+@mixin divisions() {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 50%;
+  h3 {
+    order: 1;
+    position: relative;
+    margin: 0;
+  }
+  mat-divider {
+    order: 2;
+    position: relative;
+    margin-top: 10px;
+  }
+  .column {
+    display: flex;
+    flex-flow: row wrap;
+    order: 3;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    .row, .password, .password > .row {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      label {
+        flex: 25%;
+        width: 100%;
+      }
+      mat-form-field {
+        flex: 75%;
+        width: 100%;
+      }
+      mat-select {
+        flex: 75%;
+        width: 100%;
+        /deep/ .mat-select-value {
+          color: grey !important;
+        }
+      }
+    }
+  }
+}
+
+mat-card-content {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 90%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  .user-details {
+    padding-right: 20px;
+    @include divisions();
+  } .account-details {
+    padding-left: 20px;
+    @include divisions();
+  }
+}
+
+mat-card-footer {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 10%;
+  width: 100%;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.column-left {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 50%;
+  padding: 5px 10px;
+}
+
+.column-right {
+  float: right;
+  width: 50%;
+  padding: 5px 20px;
+}
+
+.label {
+  display: inline-block;
+  width: 25%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: inherit;
+  text-align: left;
+  line-height: 38px;
+}
+
+mat-form-field {
+  width: 75%;
+}
+
+button {
+  background-color: #209e91;
+  color: #fff;
+}

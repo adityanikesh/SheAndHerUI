@@ -1,0 +1,21 @@
+<mat-button-toggle class="sidenav-toggle-button" (change)="toggleLeftSidenav()">
+  <mat-icon>format_align_justify</mat-icon>
+</mat-button-toggle>
+<a href="#/dashboard" class="app-logo">
+    <span>Avocado</span>Systems
+  </a>
+
+<popover-content #popoverList placement="bottom" [animation]="true" [closeOnClickOutside]="true" >
+  <ul class="user-avatar-list">
+    <li class="user-avatar-list-menu" *ngFor="let userAvatarMenu of userAvatarMenus">
+      <a class="user-avatar-list-menu-link" (click)="userAvatarMenuAction(userAvatarMenu)">
+        <mat-icon class="icon">{{userAvatarMenu.icon}}</mat-icon>
+        <span>{{userAvatarMenu.name}}</span>
+      </a>
+    </li>
+  </ul>
+</popover-content>
+<!--  [popover]="popoverList" -->
+<button mat-fab class="user-avatar" (click)="toggleRightSidenav()" >
+  JD
+</button>

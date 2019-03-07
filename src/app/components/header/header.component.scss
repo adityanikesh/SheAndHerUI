@@ -1,0 +1,99 @@
+:host {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+  width: 100%;
+  padding: 0 1.5em;
+  background-color: #1C2B36;
+  align-items: center;
+}
+
+.mat-button-toggle {
+  order: 1;
+  padding-right: 10px;
+  color: white;
+  background-color: transparent;
+}
+
+/deep/ .mat-button-toggle-label-content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/deep/ .mat-button-toggle-standalone {
+  box-shadow: none !important;
+}
+
+/deep/ .mat-button-toggle-focus-overlay {
+  opacity: 0 !important;
+}
+
+.mat-button-toggle:hover {
+  color: #ffb84d;
+}
+
+.app-logo {
+  order: 2;
+  color: #fff;
+  font-size: 24px;
+  font-family: Roboto,sans-serif;
+  background-color: transparent;
+  text-decoration: none;
+  padding-left: 10px;
+  white-space: nowrap;
+
+  span {
+    color: #209e91;
+  }
+}
+
+.user-avatar {
+  order: 3;
+  margin-left: auto;
+  padding: 0;
+  cursor: pointer;
+  background-color: #209e91;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/deep/ .popover{
+  margin-left: -3em !important;
+  .popover-content {
+    padding: 0 !important;
+  }
+}
+
+.user-avatar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.user-avatar-list-menu-link {
+  display: inline-block;
+  padding: 0 10px;
+  height: 25px;
+  width: 100%;
+  text-shadow: none;
+  text-decoration: none;
+  color: grey;
+  line-height: 25px;
+  user-select: none;
+  transition: all 0.2s linear;
+
+  .icon {
+    float: left;
+    font-size: 18px;
+    padding-right: 10px;
+    line-height: 25px;
+  }
+
+  &:hover {
+    color: black;
+    background-color: #c0f2ed;
+  }
+}

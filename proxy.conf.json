@@ -1,0 +1,17 @@
+[
+  {
+  "context": [
+    "/oauth"
+  ],
+  "target": "http://avocado.com:8080/orchestrator",
+  "secure": false
+},
+
+  {
+  "context": [
+    "/api"
+  ],
+  "target": "http://avocado.com:8080/orchestrator",
+  "secure": false
+  }
+]
