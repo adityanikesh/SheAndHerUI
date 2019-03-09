@@ -1,0 +1,44 @@
+<div class="pageTitleAndRoute">
+  <h1>Customer And Department</h1>
+</div>
+<mat-card class="content">
+  <mat-card-header>
+
+  </mat-card-header>
+  <mat-card-content>
+    <div class="tableOptions">
+      <button mat-raised-button (click)="addCustomer()">Add</button>
+    </div>
+
+    <mat-table mat-table [dataSource]='dataSource' class="customerTable">
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="custName">
+        <mat-header-cell *matHeaderCellDef> Customer </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.custName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="actionButtons">
+            <mat-icon class="editCustomer" (click)="editCustomer">edit</mat-icon>
+            <mat-icon class="deleteCustomer" (click)="deleteCustomer">delete</mat-icon>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumnsCustomer"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumnsCustomer;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

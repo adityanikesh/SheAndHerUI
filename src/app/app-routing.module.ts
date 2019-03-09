@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VisualizationComponent } from './components/visualization/visualization.component';
+import { ManageCustomerDepartmentComponent } from './components/manage-customer-department/manage-customer-department.component';
 import { ManageApplicationsComponent } from './components/manage-applications/manage-applications.component';
 import { DetectedApplicationsComponent } from './components/detected-applications/detected-applications.component';
 import { RegisteredApplicationsComponent } from './components/registered-applications/registered-applications.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'visualization', component: VisualizationComponent },
+      { path: 'manage-customer-department', component: ManageCustomerDepartmentComponent },
       { path: 'manage-applications', component: ManageApplicationsComponent },
       { path: 'detected-applications', component: DetectedApplicationsComponent },
       { path: 'registered-applications', component: RegisteredApplicationsComponent },

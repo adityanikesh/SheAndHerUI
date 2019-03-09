@@ -24,6 +24,7 @@ export class SidenavComponent implements OnInit {
   menus: Menu[] = [
     { name: 'Dashboard', url: 'dashboard', icon: 'home', submenus: [], hide: true, withSubMenu: false },
     { name: 'Visualization', url: 'visualization', icon: 'wallpaper', submenus: [], hide: true, withSubMenu: false },
+    { name: 'Customer & Department', url: 'manage-customer-department', icon: 'domain', submenus: [], hide: true, withSubMenu: false },
     {
       name: 'Application', url: 'manage-applications', icon: 'devices_other', submenus: [],
       // submenus: [

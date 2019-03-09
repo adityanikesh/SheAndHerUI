@@ -48,6 +48,7 @@ import { Role } from './beans/role';
 
 import { HttpInterceptorProviders } from './http-interceptors/http-interceptor-providers';
 import { UserService } from './services/user.service';
+import { CustomerDepartmentService } from './services/customer-department.service';
 import { ClientService } from './services/client.service';
 import { ApplicationService } from './services/application.service';
 import { AuthGuard } from './auth-guard.service';
@@ -61,6 +62,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VisualizationComponent } from './components/visualization/visualization.component';
+import { ManageCustomerDepartmentComponent } from './components/manage-customer-department/manage-customer-department.component';
 import { ManageApplicationsComponent } from './components/manage-applications/manage-applications.component';
 import { DetectedApplicationsComponent } from './components/detected-applications/detected-applications.component';
 import { RegisteredApplicationsComponent } from './components/registered-applications/registered-applications.component';
@@ -71,7 +73,6 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
 import { ManageClientsComponent } from './components/manage-clients/manage-clients.component';
-
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -121,6 +122,7 @@ export class MaterialModule { }
     HomeComponent,
     DashboardComponent,
     VisualizationComponent,
+    ManageCustomerDepartmentComponent,
     ManageApplicationsComponent,
     DetectedApplicationsComponent,
     RegisteredApplicationsComponent,
@@ -146,6 +148,7 @@ export class MaterialModule { }
   providers: [
     UserService,
     ClientService,
+    CustomerDepartmentService,
     CookieService,
     AuthGuard,
     HttpInterceptorProviders,

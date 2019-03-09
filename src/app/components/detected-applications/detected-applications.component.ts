@@ -29,11 +29,10 @@ export class DetectedApplicationsComponent implements OnInit {
           this.listApplication = data;
           this.dataSource = new MatTableDataSource<Application>(this.listApplication);
         });
-
   }
 
   getCustomerAndDepartment(){
-    
+
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
